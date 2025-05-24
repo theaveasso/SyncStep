@@ -15,8 +15,13 @@ OUTPUT_PATH             := ".build";
     compiler_begin_intercept(w);
     add_build_file("source/sync_step.jai", w);
     compiler_end_intercept(w);
+
+    copy_directory("resources/", tprint("%/resources/", OUTPUT_PATH));
 }
 
+#import "Basic";
 #import "Compiler";
 #import "File";
 #import "File_Utilities";
+#import "Windows_Resources";
+#import "Ico_File";
